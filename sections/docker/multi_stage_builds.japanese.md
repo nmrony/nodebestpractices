@@ -19,7 +19,7 @@
   - README.md
 ```
 
-[.dockerignore](/sections/docker/dockerignore.japanese.md) では、アプリケーションのビルドや実行に必要のないファイルをすでにフィルタリングしています。
+[.dockerignore](./docker-ignore.japanese.md) では、アプリケーションのビルドや実行に必要のないファイルをすでにフィルタリングしています。
 
 ```
 # 既存の node_modules をコピーしないで、自分たちで取得します。
@@ -38,6 +38,7 @@ FROM node:14.4.0 AS build
 
 COPY --chown=node:node . .
 RUN yarn install --frozen-lockfile && yarn build
+
 
 FROM node:14.4.0
 
@@ -58,6 +59,7 @@ FROM node:14.4.0 AS build
 
 COPY --chown=node:node . .
 RUN yarn install --frozen-lockfile && yarn build
+
 
 # ランタイム用に最小のベースイメージを使用
 FROM node:14.4.0-alpine
@@ -93,6 +95,7 @@ COPY --chown=node:node src ./src
 
 # コードのビルド
 RUN yarn build
+
 
 # ランタイムステージ
 FROM node:14.4.0-alpine

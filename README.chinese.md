@@ -9,7 +9,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2082%20Best%20Practices-blue.svg" alt="82 items"> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Jun%205%202019-green.svg" alt="Last update: June 5, 2019"> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2012.4.0%20LTS-brightgreen.svg" alt="Updated for Node 12.4.0 LTS">
+  <img src="https://img.shields.io/badge/⚙%20Item%20count%20-%2082%20Best%20Practices-blue.svg" alt="82 items"/> <img src="https://img.shields.io/badge/%F0%9F%93%85%20Last%20update%20-%20Jun%205%202019-green.svg" alt="Last update: June 5, 2019"/> <img src="https://img.shields.io/badge/ %E2%9C%94%20Updated%20For%20Version%20-%20Node%2012.4.0%20LTS-brightgreen.svg" alt="Updated for Node 12.4.0 LTS"/>
 </div>
 
 <br/>
@@ -952,11 +952,36 @@ null == undefined   // true
 
 <p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
 
+# `7. 草稿: 有关性能的最佳实践`
+
+## 我们的贡献者们正在努力完善这个章节。 [你想要加入吗?](https://github.com/goldbergyoni/nodebestpractices/issues/256)
+
+<br/><br/>
+
+## ![✔] 7.1. 不要阻塞事件循环
+
+**TL;DR:** 避免执行CPU密集型的任务，并将这些任务转移到基于上下文的专用线程中，因为它们会阻塞大多数单线程事件循环。
+
+**否则:** 由于事件循环被阻塞了，Node.js 将无法处理其它请求，从而导致同时请求的用户的延迟。 **3000 位用户正在等待响应，内容本身已经准备好了提供服务， 但是一个单独的请求阻止了服务器将结果分发回去。**
+
+🔗 [**阅读更多: 不要阻塞事件循环**](/sections/performance/block-loop.md)
+
+<br /><br /><br />
+
+## ![✔] 7.2. 优先使用原生的JS方法，而不是像 Lodash 这样的用户空间级别的实用工具
+
+**TL;DR:** 使用像 `lodash` 和 `underscore` 这样的实用库替代原生的JS方法，通常来说这么做更不好，因为它导致了一些不必要的依赖项以及更差的性能表现。
+请记住，随着新的V8引擎以及新的ES标准的引入，原生方法得到了改进，它们现在会比这些实用工具库高出大概 50% 的性能。
+
+**否则:** 你将不得不维护一些性能更低的项目，在这些项目中，你本可以很简单的使用那些已经可以用的东西，或者用几行代码来取代掉几个文件。
+
+🔗 [**阅读更多: 原生方法胜过实用工具**](/sections/performance/nativeoverutil.md)
+
+<br/><br/><br/>
+
+<p align="right"><a href="#table-of-contents">⬆ Return to top</a></p>
+
 # `API Practices`
-
-## Our contributors are working on this section. Would you like to join?
-
-# `Performance Practices`
 
 ## Our contributors are working on this section. Would you like to join?
 
@@ -989,7 +1014,7 @@ Full Stack Developer based in New Zealand, interested in architecting and buildi
 
 ## Thank You Notes
 
-We appreciate any contribution, from a single word fix to a new best practice. View our contributors and [contributing documentation here!](CONTRIBUTORS.md)
+We appreciate any contribution, from a single word fix to a new best practice. View our contributors and [contributing documentation here!](./README.md#contributors-)
 
 <br/><br/><br/>
 

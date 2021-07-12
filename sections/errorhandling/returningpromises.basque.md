@@ -137,7 +137,7 @@ Error: zati guztiak edukiz
 </p>
 </details>
 
-</br>
+<br/>
 
 ### #3 anti ereduaren kode adibidea: callback asinkronoen erabilera zuzena callback sinkronoa espero zen lekuan
 
@@ -238,7 +238,7 @@ Oso ezberdinak dira funtzio sinkronoen pila aztarnen eta funtzio asinkronoen pil
 
 ### Zergatik jotzen zen await bueltatzea anti eredutzat iraganean
 
-[Artikulu bikain](https://jakearchibald.com/2017/await-vs-return-vs-return-await/) ugari daude azaltzen dutenak zergatik `return await`ak ez diren inoiz `try` bloketik kanpo erabili behar, bai eta [ESLint arau](https://eslint.org/docs/rules/no-return-await) bat ere hori debekatzen duena. Horren arrazoia da async/await erabilgarri bihurtu izana Node.js 0.10ko transpilagailuekin (eta jatorrizko laguntza lortu dutela Node.js 7.6 bertsioan), eta "zero kostuko pila aztarna asinkronoak" Node.js 10era gehitua izana, eta ondoren Node.js 12tik kendua, `return await` eta `return` guztiz parekoak zirela, edozein `try` kode bloketik kanpo. Oraindik ere berdina izaten jarraituko du seguraski ES motoreentzat. Horregatik, Node.jsentzat jardunbide egokiena da promesak kalkulatzea beraiek bueltatu aurretik. EcmaScriptentzat, ordea, hori ez jardunbide egokiena
+[Artikulu bikain](https://jakearchibald.com/2017/await-vs-return-vs-return-await/) ugari daude azaltzen dutenak zergatik `return await`ak ez diren inoiz `try` bloketik kanpo erabili behar, bai eta [ESLint arau](https://eslint.org/docs/rules/no-return-await) bat ere hori debekatzen duena. Horren arrazoia da async/await erabilgarri bihurtu izana Node.js 0.10ko transpilagailuekin (eta jatorrizko laguntza lortu dutela Node.js 7.6 bertsioan), eta "zero kostuko pila aztarna asinkronoak" Node.js 10era gehitua izana, eta ondoren Node.js 12tik kendua, `return await` eta `return` guztiz parekoak zirela, edozein `try` kode bloketik kanpo. Oraindik ere berdina izaten jarraituko du seguraski ES motoreentzat. Horregatik, Node.jsrentzat praktika onena da promesak kalkulatzea beraiek bueltatu aurretik. EcmaScriptentzat, ordea, hori ez praktika onena
 
 ### Oharrak:
 
@@ -251,9 +251,9 @@ Oso ezberdinak dira funtzio sinkronoen pila aztarnen eta funtzio asinkronoen pil
 
 ### Erreferentziak:
   <span id="1">1. </span>[v8ko zero kostuko pila aztarna asinkronoak blog argitarapena](https://v8.dev/blog/fast-async)
-  <br>
+  <br/>
 
   <span id="2">2. </span>[zero kostuko pila aztarna asinkronoei inguruko dokumentazioa ezarpen xehetasunekin hemen](
     https://docs.google.com/document/d/13Sy_kBIJGP0XT34V1CV3nkWya4TwYx9L3Yv45LdGB6Q/edit
   )
-  <br>
+  <br/>
